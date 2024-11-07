@@ -1,0 +1,31 @@
+name: pre-commit
+
+on:
+  pull_request
+
+jobs:
+    pre-commit:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                    python-version: '3.x'
+
+            - name: Install mkdocs
+              run: |
+                pip install mkdocs
+                pip install 'mkdocs-spellcheck[all]'
+
+            - name: Run mkdocs spellcheck
+              id: spellcheck
+              run: |
+                OUTPUT=$(mkdocs build 2>&1)
+                if echo "${OUTPUT}" | grep -q "misspelled"; then
+                  echo "${OUTPUT}"
+                  echo "Spellcheck failed due to some missing words"
+                  exit 1
+                fi
