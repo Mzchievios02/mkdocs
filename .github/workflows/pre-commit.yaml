@@ -28,8 +28,10 @@ jobs:
               id: spellcheck
               run: |
                 OUTPUT=$(mkdocs build 2>&1)
-                if echo "${OUTPUT}" | grep -q "misspelled"; then
+                if echo "${OUTPUT}" | grep -q "Misspelled"; then
                   echo "${OUTPUT}"
                   echo "Spellcheck failed due to some missing words"
                   exit 1
+                else
+                  echo "All good"
                 fi
