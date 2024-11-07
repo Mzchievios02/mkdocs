@@ -27,7 +27,9 @@ jobs:
             - name: Run mkdocs spellcheck
               id: spellcheck
               run: |
+                echo "You should see this"
                 OUTPUT=$(mkdocs build 2>&1)
+                echo $OUTPUT
                 if echo "${OUTPUT}" | grep -q "misspelled"; then
                   echo "${OUTPUT}"
                   echo "Spellcheck failed due to some missing words"
