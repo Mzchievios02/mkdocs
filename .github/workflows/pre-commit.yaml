@@ -28,7 +28,10 @@ jobs:
               id: spellcheck
               run: |
                 echo "You should see this"
+                pip install mkdocs
+                pip install 'mkdocs-spellcheck[all]'
                 OUTPUT=$(mkdocs build 2>&1)
+                echo "Hello"
                 echo $OUTPUT
                 if echo "${OUTPUT}" | grep -q "misspelled"; then
                   echo "${OUTPUT}"
