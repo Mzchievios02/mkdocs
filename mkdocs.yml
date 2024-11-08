@@ -51,4 +51,6 @@ site_description: Mkdocs docu
 #       emoji_index: !!python/name:materialx.emoji.twemoji
 #       emoji_generator: !!python/name:materialx.emoji.to_svg
 plugins: 
+  - multirepo:
+    cleanup: true
   - spellcheck
