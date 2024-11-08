@@ -23,6 +23,7 @@ jobs:
               run: |
                 pip install mkdocs
                 pip install 'mkdocs-spellcheck[all]'
+                pip install mkdocs-multirepo-plugin
 
             - name: Run mkdocs spellcheck
               id: spellcheck
