@@ -1,4 +1,4 @@
-# Homepage
+<!-- # Homepage
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Code Annotaton Examples
@@ -55,4 +55,8 @@ def bubble_sort(items):
 
 :fontawesome-brands-twitter:{ .twitter }
 
-:octicons-heart-fill-24:{ .heart }
+:octicons-heart-fill-24:{ .heart } -->
+
+# Homepage
+
+Hello
