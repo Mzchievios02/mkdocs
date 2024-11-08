@@ -53,4 +53,7 @@ site_description: Mkdocs docu
 plugins: 
   - multirepo:
     cleanup: true
+    repos:
+      - section: CLI
+        import_url: 'https://github.com/Mzchievios02/Terraform'
   - spellcheck
